@@ -1,7 +1,10 @@
+import './App.css'
+import Hero from './Components/Hero/Hero Section/Hero'
+
 function App() {
   return (
     <div className="App">
-      <h1>Something Big is Comingg</h1>
+      <Hero/>
     </div>
   );
 }

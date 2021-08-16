@@ -1,0 +1,36 @@
+.hero-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #3b3b3b;
+}
+
+.left-side {
+  width: 40%;
+  padding-left: 1.5rem;
+  font-size: 5rem;
+  padding-top: 30vh;
+  font-weight: 700;
+}
+
+.right-side {
+  padding-top: 25vh;
+  width: 40%;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .left-side {
+        width: 40%;
+        padding-left: 1.5rem;
+        font-size: 2.5rem;
+        padding-top: 20vh;
+      }
+      
+      .right-side {
+        padding-top: 15vh;
+        width: 40%;
+        font-size: 1.5rem;
+      }
+}
