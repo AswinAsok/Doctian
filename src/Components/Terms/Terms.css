@@ -1,0 +1,50 @@
+.terms-container {
+  background-color: #3b3b3b;
+  color: #34e1ea;
+  margin-top: 4rem;
+}
+
+.terms {
+  width: 70%;
+  padding-left: 15%;
+  padding-top: 2.5rem;
+  text-align: center;
+}
+
+.agree-button {
+  width: 30%;
+  margin-left: 35%;
+  color: #3b3b3b;
+  background-color: #34e1ea;
+  border: none;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 3px;
+  font-size: 1.05rem;
+}
+
+.terms-line {
+  background-color: #3b3b3b;
+  color: #3b3b3b;
+  height: 0.2rem;
+  border: none;
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .terms {
+        width: 90%;
+        padding-left: 5%;
+        padding-top: 2.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      .agree-button {
+        width: 60%;
+        margin-left: 20%;
+        
+      }
+
+}
