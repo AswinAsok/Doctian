@@ -1,0 +1,16 @@
+.header{
+    width: 30%;
+    padding-left: 40%;
+    color: #3b3b3b;
+    padding-top: 2rem;
+    font-size: 3rem
+}
+
+.line{
+    width: 90%;
+    margin-left: 5%;
+    height: 0.25rem;
+    margin-top: 2rem;
+    border: none;
+    background-color: #3b3b3b;
+}
