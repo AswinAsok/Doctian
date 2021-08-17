@@ -5,17 +5,8 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./Symptoms.css";
 import axios from "axios";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > *": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}));
 
 function Symptoms() {
-  const classes = useStyles();
 
   const [features, setFeatures] = useState([]);
 
@@ -66,14 +57,14 @@ function Symptoms() {
               )}
             />
           </div>
-          {/* <div className="valuesel">
-            <form className={classes.root} noValidate autoComplete="off">
-              <TextField id="standard-basic" label="Standard" />
+          <div className="valuesel">
+            <form className="value-selection" noValidate autoComplete="off">
+              <TextField className="standard-basic" label="Standard" />
             </form>
           </div>
           <div className="button">
             <button className="updatebtn">Update</button>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
