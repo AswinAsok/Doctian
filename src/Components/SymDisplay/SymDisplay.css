@@ -10,18 +10,25 @@
 .top-bar{
  display: flex;
  flex-direction: row;
- justify-content: space-around;
+ justify-content: space-between;
  padding-top: 2rem;
 }
 
 .heading-text{
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.65rem;
 }
 
 .value-bar{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-top: 1rem;
+    width: 95%;
+    padding-left: 2.1%;
+}
+
+.table-container{
+    width: 80%;
+    padding-left: 10%;
 }
