@@ -10,7 +10,7 @@
   padding-top: 5rem;
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  margin-left: 8%;
 }
 
 .symleft-side {
@@ -83,7 +83,7 @@
 
   .features-select {
     margin-top: 0rem;
-    width: 11rem;
+    width: 10.5rem;
   }
   .standard-basic {
     width: 11rem;

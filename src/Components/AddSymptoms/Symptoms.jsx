@@ -6,7 +6,7 @@ import "./Symptoms.css";
 import axios from "axios";
 
 
-function Symptoms() {
+function Symptoms({symptom, setSymptom, value, setValue}) {
 
   const [features, setFeatures] = useState([]);
 
@@ -51,7 +51,6 @@ function Symptoms() {
               className="features-select"
               options={features}
               getOptionLabel={(option) => option}
-              // style={{ width: 250 }}
               renderInput={(params) => (
                 <TextField {...params} label="Symptoms" variant="outlined" />
               )}
@@ -63,7 +62,7 @@ function Symptoms() {
             </form>
           </div>
           <div className="button">
-            <button className="updatebtn">Update</button>
+            <button className="updatebtn">Add</button>
           </div>
         </div>
       </div>
