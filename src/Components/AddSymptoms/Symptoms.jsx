@@ -31,7 +31,6 @@ function Symptoms({ symptom, setSymptom, value, setValue }) {
       });
   });
 
-
   return (
     <div>
       <hr className="line" />
@@ -55,13 +54,14 @@ function Symptoms({ symptom, setSymptom, value, setValue }) {
               getOptionLabel={(option) => option}
               onChange={(event, selectedValue) => setChoice(selectedValue)}
               renderInput={(params) => (
-                <TextField {...params} label="Symptoms" variant="outlined" />
+                <TextField {...params} required label="Symptoms" variant="outlined" />
               )}
             />
           </div>
           <div className="valuesel">
             <form className="value-selection" noValidate autoComplete="off">
               <TextField
+                required
                 onChange={(event) => setCvalue(event.target.value)}
                 className="standard-basic"
                 label="Standard"
@@ -70,10 +70,11 @@ function Symptoms({ symptom, setSymptom, value, setValue }) {
           </div>
           <div className="button">
             <button
+              type="submit"
               onClick={() => {
                 console.log(choice + ":" + cvalue);
-                setSymptom(symptom => [...symptom, choice]);
-                setValue(value => [...value, cvalue])
+                setSymptom((symptom) => [...symptom, choice]);
+                setValue((value) => [...value, cvalue]);
                 setChoice("");
                 setCvalue("");
               }}
