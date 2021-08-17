@@ -1,11 +1,10 @@
 import { useState, React, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./Symptoms.css";
 import axios from "axios";
 
-function Symptoms({ symptom, setSymptom, value, setValue }) {
+function Symptoms({ diagfeatures, setDiagfeatures }) {
   const [features, setFeatures] = useState([]); //Symptoms recieved from the server
 
   const [choice, setChoice] = useState(); //Selected Symptom
@@ -54,7 +53,12 @@ function Symptoms({ symptom, setSymptom, value, setValue }) {
               getOptionLabel={(option) => option}
               onChange={(event, selectedValue) => setChoice(selectedValue)}
               renderInput={(params) => (
-                <TextField {...params} required label="Symptoms" variant="outlined" />
+                <TextField
+                  {...params}
+                  required
+                  label="Symptoms"
+                  variant="outlined"
+                />
               )}
             />
           </div>
@@ -72,9 +76,10 @@ function Symptoms({ symptom, setSymptom, value, setValue }) {
             <button
               type="submit"
               onClick={() => {
-                console.log(choice + ":" + cvalue);
-                setSymptom((symptom) => [...symptom, choice]);
-                setValue((value) => [...value, cvalue]);
+                setDiagfeatures((diagfeatures) => [
+                  ...diagfeatures,
+                  { symptom: choice, value: cvalue },
+                ]);
                 setChoice("");
                 setCvalue("");
               }}
