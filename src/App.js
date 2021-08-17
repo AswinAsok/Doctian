@@ -10,8 +10,8 @@ function App() {
   const [start, setStart] = useState(false);
 
 
-  const [symptom, setSymptom] = useState([]);
-  const [value, setValue] = useState([]);
+  const [symptom, setSymptom] = useState(["Null"]);
+  const [value, setValue] = useState(["Null"]);
 
   return (
     <div className="App">

@@ -5,10 +5,11 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./Symptoms.css";
 import axios from "axios";
 
+function Symptoms({ symptom, setSymptom, value, setValue }) {
+  const [features, setFeatures] = useState([]); //Symptoms recieved from the server
 
-function Symptoms({symptom, setSymptom, value, setValue}) {
-
-  const [features, setFeatures] = useState([]);
+  const [choice, setChoice] = useState(); //Selected Symptom
+  const [cvalue, setCvalue] = useState(); //Entered Value
 
   useEffect(() => {
     const options = {
@@ -29,6 +30,7 @@ function Symptoms({symptom, setSymptom, value, setValue}) {
         console.error(error);
       });
   });
+
 
   return (
     <div>
@@ -51,6 +53,7 @@ function Symptoms({symptom, setSymptom, value, setValue}) {
               className="features-select"
               options={features}
               getOptionLabel={(option) => option}
+              onChange={(event, selectedValue) => setChoice(selectedValue)}
               renderInput={(params) => (
                 <TextField {...params} label="Symptoms" variant="outlined" />
               )}
@@ -58,11 +61,26 @@ function Symptoms({symptom, setSymptom, value, setValue}) {
           </div>
           <div className="valuesel">
             <form className="value-selection" noValidate autoComplete="off">
-              <TextField className="standard-basic" label="Standard" />
+              <TextField
+                onChange={(event) => setCvalue(event.target.value)}
+                className="standard-basic"
+                label="Standard"
+              />
             </form>
           </div>
           <div className="button">
-            <button className="updatebtn">Add</button>
+            <button
+              onClick={() => {
+                console.log(choice + ":" + cvalue);
+                setSymptom(symptom => [...symptom, choice]);
+                setValue(value => [...value, cvalue])
+                setChoice("");
+                setCvalue("");
+              }}
+              className="updatebtn"
+            >
+              Add
+            </button>
           </div>
         </div>
       </div>
