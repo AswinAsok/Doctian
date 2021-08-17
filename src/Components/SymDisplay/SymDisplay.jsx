@@ -21,6 +21,8 @@ function SymDisplay({ diagfeatures, setDiagfeatures }) {
           ))}
         </div>
       </div>
+
+      <button className="analyse">Analyse</button>
     </div>
   );
 }
