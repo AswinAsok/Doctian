@@ -1,9 +1,9 @@
 .header{
-    width: 30%;
-    padding-left: 40%;
+    width: 40%;
+    padding-left: 5.3rem;
+    font-size: 2rem;
     color: #3b3b3b;
     padding-top: 2rem;
-    font-size: 3rem
 }
 
 .line{

@@ -5,6 +5,7 @@ import Terms from "./Components/Terms/Terms";
 import Symptoms from "./Components/AddSymptoms/Symptoms";
 
 function App() {
+
   const [start, setStart] = useState(false);
 
   return (
