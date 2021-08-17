@@ -1,9 +1,30 @@
+.symptoms-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.symright-side{
+    width: 40%;
+    padding-right: 5.3rem;
+    padding-top: 5rem;
+}
+
 .header{
     width: 40%;
     padding-left: 5.3rem;
-    font-size: 2rem;
+    font-size: 3rem;
+    font-weight: bolder;
     color: #3b3b3b;
-    padding-top: 2rem;
+    padding-top: 5rem;
+}
+
+.sub-header{
+    width: 35%;
+    color: #3b3b3b;
+    padding-left: 5.3rem;
+    font-size: 0.98rem;
+    padding-top: 1rem;
 }
 
 .line{
@@ -13,4 +34,9 @@
     margin-top: 2rem;
     border: none;
     background-color: #3b3b3b;
+}
+
+.features-select{
+    margin-top: 1rem;
+    margin-left: 5.3rem;
 }

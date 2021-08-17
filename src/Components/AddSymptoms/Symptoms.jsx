@@ -31,16 +31,28 @@ function Symptoms() {
     <div>
       <hr className="line" />
       <div className="symptoms-container">
-        <div className="header">Add Symptoms</div>
-        <Autocomplete
-          id="combo-box-demo"
+        <div className="symleft-side">
+          <div className="header">Symptoms</div>
+          <div className="sub-header">
+            From the selections given alongside you can select the symptoms you
+            are having so that we can diagnose you.{" "}
+            <b>
+              According to the symptom you have selected enter either a value or
+              Yes or No.
+            </b>
+          </div>
+        </div>
+        <div className="symright-side">
+          <Autocomplete
+          className="features-select"
           options={features}
           getOptionLabel={(option) => option}
           style={{ width: 300 }}
           renderInput={(params) => (
-            <TextField {...params} label="Combo box" variant="outlined" />
+            <TextField {...params} label="Symptoms" variant="outlined" />
           )}
         />
+        </div>
       </div>
     </div>
   );
