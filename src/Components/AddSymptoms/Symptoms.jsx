@@ -1,10 +1,22 @@
 import { useState, React, useEffect } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./Symptoms.css";
 import axios from "axios";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+}));
+
 function Symptoms() {
+  const classes = useStyles();
+
   const [features, setFeatures] = useState([]);
 
   useEffect(() => {
@@ -43,15 +55,25 @@ function Symptoms() {
           </div>
         </div>
         <div className="symright-side">
-          <Autocomplete
-          className="features-select"
-          options={features}
-          getOptionLabel={(option) => option}
-          style={{ width: 300 }}
-          renderInput={(params) => (
-            <TextField {...params} label="Symptoms" variant="outlined" />
-          )}
-        />
+          <div className="choose">
+            <Autocomplete
+              className="features-select"
+              options={features}
+              getOptionLabel={(option) => option}
+              // style={{ width: 250 }}
+              renderInput={(params) => (
+                <TextField {...params} label="Symptoms" variant="outlined" />
+              )}
+            />
+          </div>
+          {/* <div className="valuesel">
+            <form className={classes.root} noValidate autoComplete="off">
+              <TextField id="standard-basic" label="Standard" />
+            </form>
+          </div>
+          <div className="button">
+            <button className="updatebtn">Update</button>
+          </div> */}
         </div>
       </div>
     </div>
