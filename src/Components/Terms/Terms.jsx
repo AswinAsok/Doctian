@@ -1,8 +1,8 @@
 import React from "react";
 import "./Terms.css";
 
-function Terms({ start, setStart }) {
-  if (start) {
+function Terms({ start, setStart, sessionId}) {
+  if (sessionId && start) {
     return (
       <div className="terms-container">
         <hr className="terms-line" />
@@ -19,7 +19,7 @@ function Terms({ start, setStart }) {
   }
   else{
     return(
-      <div></div>
+      <div>Loading...</div>
     );
   }
 }

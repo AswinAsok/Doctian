@@ -9,10 +9,12 @@ function App() {
   const [start, setStart] = useState(false);
   const [diagfeatures, setDiagfeatures] = useState([]);
 
+  const [sessionId, setSessionId] = useState();
+
   return (
     <div className="App">
-      <Hero start={start} setStart={setStart} />
-      <Terms start={start} setStart={setStart} />
+      <Hero start={start} setStart={setStart} setSessionId={setSessionId} />
+      <Terms start={start} setStart={setStart} sessionId={sessionId} />
 
       <Symptoms diagfeatures={diagfeatures} setDiagfeatures={setDiagfeatures} />
       <SymDisplay
