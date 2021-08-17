@@ -1,27 +1,9 @@
 import React from "react";
 import "./Hero.css";
-import axios from "axios";
 
-function Hero({ start, setStart, setSessionId }) {
-  const options = {
-    method: "GET",
-    url: "https://endlessmedicalapi1.p.rapidapi.com/InitSession",
-    headers: {
-      "x-rapidapi-key": "79b12daedbmshefa74dba1d17b54p1e2497jsn262f1d43d61b",
-      "x-rapidapi-host": "endlessmedicalapi1.p.rapidapi.com",
-    },
-  };
 
-  const getSessionId = () => {
-    axios
-      .request(options)
-      .then(function (response) {
-        return response.data.sessionID;
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
+function Hero({ start, setStart}) {
+  
 
   return (
     <div>
@@ -30,7 +12,6 @@ function Hero({ start, setStart, setSessionId }) {
           Doctian
           <button
             onClick={() => {
-              setSessionId(getSessionId());
               setStart(!start);
             }}
             className="start-button"
