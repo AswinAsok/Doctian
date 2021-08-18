@@ -26,30 +26,52 @@ function Diagnose({ sessionId }) {
       });
   };
 
-  return (
-    <div>
-      <button className="analyse" onClick={() => getresult()}>
-        Analyse
-      </button>
+  if (result) {
+    console.log(result);
+    return (
+      <div>
+        <button className="analyse" onClick={() => getresult()}>
+          Analyse
+        </button>
 
-     <div className="diagnose-display">
-       <div className="lside">
-         <div className="heading">Diagnose Results</div>
-         <div className="sub-heading">
-           These results are <b>based on the data which you have 
-           entered previously</b> and the Diagnose which are displayed 
-           are <b>completely machine generated</b>. If you are having any <b>severe
-           health issuses</b> we recommed you to <b>directly consult a doctor.</b>
-         </div>
-       </div>
-       <div className="rside">
-         <div className="results-container">
-           
-         </div>
-       </div>
-     </div>
-    </div>
-  );
+        <div className="diagnose-display">
+          <div className="lside">
+            <div className="heading">Diagnose Results</div>
+            <div className="sub-heading">
+              These results are{" "}
+              <b>based on the data which you have entered previously</b> and the
+              Diagnose which are displayed are{" "}
+              <b>completely machine generated</b>. If you are having any{" "}
+              <b>severe health issuses</b> we recommed you to{" "}
+              <b>directly consult a doctor.</b>
+            </div>
+          </div>
+          <div className="rside">
+            <div className="results-container">
+              {result.map((disease, index) => (
+                <div className="Disease Bar">
+                  <p>{Object.keys(disease)[0]}</p>
+
+                  
+
+
+
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <button className="analyse" onClick={() => getresult()}>
+          Analyse
+        </button>
+      </div>
+    );
+  }
 }
 
 export default Diagnose;
