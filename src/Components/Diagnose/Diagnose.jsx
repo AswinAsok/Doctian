@@ -49,7 +49,7 @@ function Diagnose({ sessionId, agree, diagfeatures }) {
               <br></br>
               Made By <b>Aswin Asok</b>, for <b>TECHSIAS Hacktoons.</b>
               <br></br>
-              <a href="">Give a 🌟 on GitHub</a>
+              <a href="https://github.com/AswinAsok/Doctian">Give a 🌟 on GitHub</a>
             </div>
           </div>
           <div className="rside">
