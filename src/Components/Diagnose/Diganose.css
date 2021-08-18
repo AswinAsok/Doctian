@@ -49,3 +49,23 @@
   font-weight: 600;
   margin-top: 1rem;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .lside {
+    width: 40%;
+    padding-left: 2.3rem;
+    padding-top: 0rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .disease {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+}
