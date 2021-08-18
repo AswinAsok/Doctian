@@ -1,21 +1,18 @@
 .symptoms-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .symright-side {
   width: 40%;
-  padding-right: 4rem;
+  padding-right: 2rem;
   padding-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  margin-left: 20%;
 }
 
 .symleft-side {
   width: 40%;
-  padding-left: 5.3rem;
+  padding-left: 5.5rem;
   padding-top: 5rem;
   color: #3b3b3b;
 }
@@ -72,8 +69,9 @@
 
   .symleft-side {
     width: 40%;
-    padding-left: 3.6rem;
-    padding-top: 3rem;
+    padding-left: 2.5rem;
+    padding-top: 5rem;
+    color: #3b3b3b;
   }
 
   .sub-header {
@@ -83,13 +81,13 @@
 
   .features-select {
     margin-top: 0rem;
-    width: 10.5rem;
+    width: 9rem;
   }
   .standard-basic {
-    width: 11rem;
+    width: 9rem;
   }
 
   .updatebtn {
-    width: 11rem;
+    width: 9rem;
   }
 }

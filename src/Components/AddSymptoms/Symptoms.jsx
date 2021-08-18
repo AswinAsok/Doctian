@@ -28,37 +28,34 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId }) {
       .catch(function (error) {
         console.error(error);
       });
-  },[]);
+  }, []);
 
   // Udpate Features
 
-
   const updatefeature = (value, name) => {
+    var options = {
+      method: "POST",
+      url: "https://endlessmedicalapi1.p.rapidapi.com/UpdateFeature",
+      params: {
+        SessionID: sessionId,
+        value: value,
+        name: name,
+      },
+      headers: {
+        "x-rapidapi-key": "79b12daedbmshefa74dba1d17b54p1e2497jsn262f1d43d61b",
+        "x-rapidapi-host": "endlessmedicalapi1.p.rapidapi.com",
+      },
+    };
 
-  var options = {
-    method: "POST",
-    url: "https://endlessmedicalapi1.p.rapidapi.com/UpdateFeature",
-    params: {
-      SessionID: sessionId,
-      value: value,
-      name: name
-    },
-    headers: {
-      "x-rapidapi-key": "79b12daedbmshefa74dba1d17b54p1e2497jsn262f1d43d61b",
-      "x-rapidapi-host": "endlessmedicalapi1.p.rapidapi.com",
-    },
+    axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   };
-
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-
-  }
 
   return (
     <div>
@@ -76,22 +73,21 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId }) {
           </div>
         </div>
         <div className="symright-side">
-          <div className="choose">
-            <Autocomplete
-              className="features-select"
-              options={features}
-              getOptionLabel={(option) => option}
-              onChange={(event, selectedValue) => setChoice(selectedValue)}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  required
-                  label="Symptoms"
-                  variant="outlined"
-                />
-              )}
-            />
-          </div>
+          <Autocomplete
+            className="features-select"
+            options={features}
+            getOptionLabel={(option) => option}
+            onChange={(event, selectedValue) => setChoice(selectedValue)}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                required
+                label="Symptoms"
+                variant="outlined"
+              />
+            )}
+          />
+
           <div className="valuesel">
             <form className="value-selection" noValidate autoComplete="off">
               <TextField
