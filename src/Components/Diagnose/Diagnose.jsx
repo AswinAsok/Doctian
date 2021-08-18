@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Diganose.css";
 var axios = require("axios").default;
 
-function Diagnose({ sessionId, agree }) {
+function Diagnose({ sessionId, agree, diagfeatures }) {
   const [result, setResult] = useState(); // State variable to store the diagnosis result from the server.
 
   const getresult = () => {
@@ -45,6 +45,11 @@ function Diagnose({ sessionId, agree }) {
               <b>completely machine generated</b>. If you are having any{" "}
               <b>severe health issuses</b> we recommed you to{" "}
               <b>directly consult a doctor.</b>
+              <br></br>
+              <br></br>
+              Made By <b>Aswin Asok</b>, for <b>TECHSIAS Hacktoons.</b>
+              <br></br>
+              <a href="">Give a 🌟 on GitHub</a>
             </div>
           </div>
           <div className="rside">
@@ -63,8 +68,8 @@ function Diagnose({ sessionId, agree }) {
         </div>
       </div>
     );
-  } else if (sessionId && agree) {
-    // If the diagnosis result is not present showing the analyse button only
+  } else if (sessionId && agree && diagfeatures.length > 0) {
+    // If the diagnosis result is not present showing the analyse button only if the user has added atleast one symptom.
     return (
       <div>
         <button className="analyse" onClick={() => getresult()}>

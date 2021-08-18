@@ -65,7 +65,11 @@ function App() {
       </Fade>
 
       <Fade>
-        <Diagnose sessionId={sessionId} agree={agree} />
+        <Diagnose
+          sessionId={sessionId}
+          agree={agree}
+          diagfeatures={diagfeatures}
+        />
       </Fade>
     </div>
   );
