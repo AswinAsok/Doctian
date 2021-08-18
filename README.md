@@ -13,6 +13,7 @@ As mentioned in the title doctian is an onilne medical diagnosis app which takes
 ### Features
 - Simple and Minimalistic User Interface.
 - Smooth Design Flow.
+- Completely Responsive Design.
 - Well Structured Code.
 - Provides Upto 700 Symptoms.
 - Diagnosis Results within seconds.
