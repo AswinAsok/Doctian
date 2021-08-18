@@ -17,7 +17,8 @@ function Hero({ start, setStart }) {
           </button>
         </div>
         <div className="right-side">
-          We at Doction will provide you <b>Endless Medical Support 24x7</b>.
+          We at Doction will provide you <b>Endless Medical Support 24x7</b> and
+          will <b>Diganose you in one Scroll.</b>
         </div>
       </div>
     </div>

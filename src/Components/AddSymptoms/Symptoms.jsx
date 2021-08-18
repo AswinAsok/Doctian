@@ -4,7 +4,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import "./Symptoms.css";
 import axios from "axios";
 
-function Symptoms({ diagfeatures, setDiagfeatures, sessionId }) {
+function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
   const [features, setFeatures] = useState([]); //Symptoms recieved from the server
 
   const [choice, setChoice] = useState(); //Selected Symptom
@@ -57,68 +57,72 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId }) {
       });
   };
 
-  return (
-    <div>
-      <hr className="line" />
-      <div className="symptoms-container">
-        <div className="symleft-side">
-          <div className="header">Symptoms</div>
-          <div className="sub-header">
-            From the selections given alongside you can select the symptoms you
-            are having so that we can diagnose you.{" "}
-            <b>
-              According to the symptom you have selected enter either a value or
-              Yes or No.
-            </b>
+  if (agree && sessionId) {
+    return (
+      <div>
+        <hr className="line" />
+        <div className="symptoms-container">
+          <div className="symleft-side">
+            <div className="header">Symptoms</div>
+            <div className="sub-header">
+              From the selections given alongside you can select the symptoms
+              you are having so that we can diagnose you.{" "}
+              <b>
+                According to the symptom you have selected enter either a value
+                or Yes or No.
+              </b>
+            </div>
           </div>
-        </div>
-        <div className="symright-side">
-          <Autocomplete
-            className="features-select"
-            options={features}
-            getOptionLabel={(option) => option}
-            onChange={(event, selectedValue) => setChoice(selectedValue)}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                required
-                label="Symptoms"
-                variant="outlined"
-              />
-            )}
-          />
+          <div className="symright-side">
+            <Autocomplete
+              className="features-select"
+              options={features}
+              getOptionLabel={(option) => option}
+              onChange={(event, selectedValue) => setChoice(selectedValue)}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  required
+                  label="Symptoms"
+                  variant="outlined"
+                />
+              )}
+            />
 
-          <div className="valuesel">
-            <form className="value-selection" noValidate autoComplete="off">
-              <TextField
-                required
-                onChange={(event) => setCvalue(event.target.value)}
-                className="standard-basic"
-                label="Standard"
-              />
-            </form>
-          </div>
-          <div className="button">
-            <button
-              type="submit"
-              onClick={() => {
-                setDiagfeatures((diagfeatures) => [
-                  ...diagfeatures,
-                  { symptom: choice, value: cvalue },
-                ]);
-                updatefeature(cvalue, choice);
-                setChoice("");
-                setCvalue("");
-              }}
-              className="updatebtn"
-            >
-              Add
-            </button>
+            <div className="valuesel">
+              <form className="value-selection" noValidate autoComplete="off">
+                <TextField
+                  required
+                  onChange={(event) => setCvalue(event.target.value)}
+                  className="standard-basic"
+                  label="Standard"
+                />
+              </form>
+            </div>
+            <div className="button">
+              <button
+                type="submit"
+                onClick={() => {
+                  setDiagfeatures((diagfeatures) => [
+                    ...diagfeatures,
+                    { symptom: choice, value: cvalue },
+                  ]);
+                  updatefeature(cvalue, choice);
+                  setChoice("");
+                  setCvalue("");
+                }}
+                className="updatebtn"
+              >
+                Add
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div></div>;
+  }
 }
 
 export default Symptoms;

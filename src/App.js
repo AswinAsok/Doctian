@@ -13,6 +13,8 @@ function App() {
 
   const [sessionId, setSessionId] = useState();
 
+  const [agree, setAgree] = useState(false);
+
   useEffect(() => {
     const options = {
       method: "GET",
@@ -36,15 +38,27 @@ function App() {
   return (
     <div className="App">
       <Hero start={start} setStart={setStart} />
-      <Terms start={start} setStart={setStart} sessionId={sessionId} />
+      <Terms
+        start={start}
+        setStart={setStart}
+        sessionId={sessionId}
+        setAgree={setAgree}
+      />
 
-      <Symptoms diagfeatures={diagfeatures} setDiagfeatures={setDiagfeatures} sessionId={sessionId}/>
+      <Symptoms
+        diagfeatures={diagfeatures}
+        setDiagfeatures={setDiagfeatures}
+        sessionId={sessionId}
+        agree={agree}
+      />
       <SymDisplay
         diagfeatures={diagfeatures}
         setDiagfeatures={setDiagfeatures}
+        sessionId={sessionId}
+        agree={agree}
       />
 
-      <Diagnose sessionId={sessionId}/>
+      <Diagnose sessionId={sessionId} agree={agree} />
     </div>
   );
 }

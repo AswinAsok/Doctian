@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Diganose.css";
 var axios = require("axios").default;
 
-function Diagnose({ sessionId }) {
+function Diagnose({ sessionId, agree }) {
   const [result, setResult] = useState();
 
   const getresult = () => {
@@ -50,7 +50,10 @@ function Diagnose({ sessionId }) {
             <div className="results-container">
               {result.map((disease, index) => (
                 <div className="Disease Bar">
-                  <p className="disease">• &nbsp; {Object.keys(disease)[0]} ({Math.round(Object.values(disease)[0] * 100)}%)</p>
+                  <p className="disease">
+                    • &nbsp; {Object.keys(disease)[0]} (
+                    {Math.round(Object.values(disease)[0] * 100)}%)
+                  </p>
                   <p className="percentage"></p>
                 </div>
               ))}
@@ -59,7 +62,7 @@ function Diagnose({ sessionId }) {
         </div>
       </div>
     );
-  } else {
+  } else if (sessionId && agree) {
     return (
       <div>
         <button className="analyse" onClick={() => getresult()}>
@@ -67,6 +70,8 @@ function Diagnose({ sessionId }) {
         </button>
       </div>
     );
+  } else {
+    return <div></div>;
   }
 }
 

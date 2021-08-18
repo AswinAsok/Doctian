@@ -3,57 +3,61 @@
   flex-direction: row;
   justify-content: space-around;
   color: #3b3b3b;
+  padding-top: 16%;
 }
 
 .left-side {
   width: 40%;
   padding-left: 1.5rem;
   font-size: 5rem;
-  padding-top: 25vh;
   font-weight: 700;
   display: flex;
   flex-direction: column;
 }
 
 .right-side {
-  padding-top: 25vh;
   width: 40%;
   font-size: 3rem;
 }
 
-.start-button{
-    background-color: #3b3b3b;
-    color: #34E1EA;
-    border: none;
-    width: 15rem;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    font-weight: 500;
-    
+.start-button {
+  background-color: #3b3b3b;
+  color: #34e1ea;
+  border: none;
+  width: 15rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 @media only screen and (max-width: 600px) {
-    
-    .left-side {
-        width: 40%;
-        padding-left: 1.5rem;
-        font-size: 2.5rem;
-        padding-top: 20vh;
-      }
-      
-      .right-side {
-        padding-top: 15vh;
-        width: 40%;
-        font-size: 1.5rem;
-      }
+  .hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #3b3b3b;
+    padding-top: 15%;
+  }
 
-      .start-button{
-        width: 8rem;
-        padding: 0.5rem;
-        font-size: 0.9rem;
-        border-radius: 8px;
-        font-weight: 500;
-        
-    }
+  .left-side {
+    width: 40%;
+    padding-left: 1.5rem;
+    font-size: 2.5rem;
+    padding-top: 20vh;
+  }
+
+  .right-side {
+    padding-top: 15vh;
+    width: 40%;
+    font-size: 1.5rem;
+  }
+
+  .start-button {
+    width: 8rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    font-weight: 500;
+  }
 }

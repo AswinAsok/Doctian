@@ -2,7 +2,7 @@ import React from "react";
 import "./Terms.css";
 import axios from "axios";
 
-function Terms({ start, setStart, sessionId }) {
+function Terms({ start, setStart, sessionId, setAgree }) {
   const options = {
     method: "POST",
     url: "https://endlessmedicalapi1.p.rapidapi.com/AcceptTermsOfUse",
@@ -22,6 +22,7 @@ function Terms({ start, setStart, sessionId }) {
       .request(options)
       .then(function (response) {
         console.log(response.data);
+        setAgree(true)
       })
       .catch(function (error) {
         console.error(error);
