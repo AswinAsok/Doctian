@@ -5,6 +5,7 @@ import { Fade } from "react-awesome-reveal";
 
 function Terms({ start, setStart, sessionId, setAgree }) {
   const options = {
+    // Options for the axios request.
     method: "POST",
     url: "https://endlessmedicalapi1.p.rapidapi.com/AcceptTermsOfUse",
     params: {
@@ -19,11 +20,12 @@ function Terms({ start, setStart, sessionId, setAgree }) {
   };
 
   const getTerms = () => {
+    // Function to verify the terms and conditions.
     axios
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        setAgree(true);
+        setAgree(true); // Changing the state variable.
       })
       .catch(function (error) {
         console.error(error);
@@ -31,6 +33,7 @@ function Terms({ start, setStart, sessionId, setAgree }) {
   };
 
   if (sessionId && start) {
+    // Checking whether the user has clicked the "Get Started" Button and sessionId is recieved or not.
     return (
       <Fade>
         <div className="terms-container">
@@ -42,8 +45,8 @@ function Terms({ start, setStart, sessionId, setAgree }) {
           </div>
           <button
             onClick={() => {
-              getTerms();
-              setStart(false);
+              getTerms(); // Calling the function to check terms on "Agree" button click.
+              setStart(false); // Changing the state variable so that the terms section gets hidden.
             }}
             className="agree-button"
           >

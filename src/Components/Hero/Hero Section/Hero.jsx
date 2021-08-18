@@ -10,8 +10,8 @@ function Hero({ start, setStart }) {
         <div className="left-side">
           Doctian
           <button
-            onClick={() => {
-              setStart(!start);
+            onClick={() => {  // Starting the session on "Get Started" Button Click.
+              setStart(!start); //  Changing the State variable.
             }}
             className="start-button"
           >

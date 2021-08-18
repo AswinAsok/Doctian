@@ -3,9 +3,10 @@ import "./Diganose.css";
 var axios = require("axios").default;
 
 function Diagnose({ sessionId, agree }) {
-  const [result, setResult] = useState();
+  const [result, setResult] = useState(); // State variable to store the diagnosis result from the server.
 
   const getresult = () => {
+    // Function to get the analysis result form the server.
     var options = {
       method: "GET",
       url: "https://endlessmedicalapi1.p.rapidapi.com/Analyze",
@@ -19,7 +20,7 @@ function Diagnose({ sessionId, agree }) {
     axios
       .request(options)
       .then(function (response) {
-        setResult(response.data.Diseases);
+        setResult(response.data.Diseases); // Storing the diagnosis analysis
       })
       .catch(function (error) {
         console.error(error);
@@ -27,7 +28,7 @@ function Diagnose({ sessionId, agree }) {
   };
 
   if (result) {
-    console.log(result);
+    // Checking whether the diagnosis analysis is present or not.
     return (
       <div>
         <button className="analyse" onClick={() => getresult()}>
@@ -63,6 +64,7 @@ function Diagnose({ sessionId, agree }) {
       </div>
     );
   } else if (sessionId && agree) {
+    // If the diagnosis result is not present showing the analyse button only
     return (
       <div>
         <button className="analyse" onClick={() => getresult()}>

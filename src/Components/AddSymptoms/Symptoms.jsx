@@ -6,10 +6,10 @@ import "./Symptoms.css";
 import axios from "axios";
 
 function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
-  const [features, setFeatures] = useState([]); //Symptoms recieved from the server
+  const [features, setFeatures] = useState([]); // List of Symptoms recieved from the server
 
-  const [choice, setChoice] = useState(); //Selected Symptom
-  const [cvalue, setCvalue] = useState(); //Entered Value
+  const [choice, setChoice] = useState(); // Selected Symptom
+  const [cvalue, setCvalue] = useState(); // Entered Value
 
   useEffect(() => {
     const options = {
@@ -24,16 +24,17 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
     axios
       .request(options)
       .then(function (response) {
-        setFeatures(response.data.data);
+        setFeatures(response.data.data); // Recieveing the list of symptoms from the server.
       })
       .catch(function (error) {
         console.error(error);
       });
   }, []);
 
-  // Udpate Features
+  // Update Features
 
   const updatefeature = (value, name) => {
+    // Function to update the server with each selected symptom for the user.
     var options = {
       method: "POST",
       url: "https://endlessmedicalapi1.p.rapidapi.com/UpdateFeature",
@@ -59,6 +60,7 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
   };
 
   if (agree && sessionId) {
+    // Checking whether the user has agreed to the terms and whether sessionId is there or not.
     return (
       <Fade>
         <div>
@@ -77,10 +79,11 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
             </div>
             <div className="symright-side">
               <Autocomplete
-                className="features-select"
+                className="features-select" // Setting the list of Symptoms recieved form the server to the options.
                 options={features}
+                value={choice}
                 getOptionLabel={(option) => option}
-                onChange={(event, selectedValue) => setChoice(selectedValue)}
+                onChange={(event, selectedValue) => setChoice(selectedValue)} // Storing the input value to a state variable.
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -93,9 +96,10 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
 
               <div className="valuesel">
                 <form className="value-selection" noValidate autoComplete="off">
-                  <TextField
+                  <TextField // Input for the user to Type in the values for the selected Symptom.
                     required
-                    onChange={(event) => setCvalue(event.target.value)}
+                    value={cvalue}
+                    onChange={(event) => setCvalue(event.target.value)} // Storing the input value to a state variable.
                     className="standard-basic"
                     label="Value"
                   />
@@ -103,15 +107,15 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
               </div>
               <div className="button">
                 <button
-                  type="submit"
+                  type="submit" // Button to validate the fields and store the value to a single array.
                   onClick={() => {
                     setDiagfeatures((diagfeatures) => [
                       ...diagfeatures,
                       { symptom: choice, value: cvalue },
                     ]);
                     updatefeature(cvalue, choice);
-                    setChoice("");
-                    setCvalue("");
+                    setChoice(""); // Clearing the Fields
+                    setCvalue(""); // Clearing the Fields
                   }}
                   className="updatebtn"
                 >

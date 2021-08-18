@@ -9,14 +9,15 @@ import Diagnose from "./Components/Diagnose/Diagnose";
 import { Fade } from "react-awesome-reveal";
 
 function App() {
-  const [start, setStart] = useState(false);
-  const [diagfeatures, setDiagfeatures] = useState([]);
+  const [start, setStart] = useState(false); // State variable to initalize the session
+  const [diagfeatures, setDiagfeatures] = useState([]); // To store the symptoms of the user for diagnosis
 
-  const [sessionId, setSessionId] = useState();
+  const [sessionId, setSessionId] = useState(); // To store the received sessionID
 
-  const [agree, setAgree] = useState(false);
+  const [agree, setAgree] = useState(false); // To check whether the user has agreed to the terms and conditions
 
   useEffect(() => {
+    // To get the sessionId
     const options = {
       method: "GET",
       url: "https://endlessmedicalapi1.p.rapidapi.com/InitSession",
@@ -29,7 +30,7 @@ function App() {
     axios
       .request(options)
       .then(function (response) {
-        setSessionId(response.data.SessionID);
+        setSessionId(response.data.SessionID); // Storing sessionId in state variable for furthur usage
       })
       .catch(function (error) {
         console.error(error);
@@ -39,6 +40,7 @@ function App() {
   return (
     <div className="App">
       <Hero start={start} setStart={setStart} />
+
       <Terms
         start={start}
         setStart={setStart}
@@ -61,6 +63,7 @@ function App() {
           agree={agree}
         />
       </Fade>
+
       <Fade>
         <Diagnose sessionId={sessionId} agree={agree} />
       </Fade>
