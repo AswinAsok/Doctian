@@ -50,12 +50,8 @@ function Diagnose({ sessionId }) {
             <div className="results-container">
               {result.map((disease, index) => (
                 <div className="Disease Bar">
-                  <p>{Object.keys(disease)[0]}</p>
-
-                  
-
-
-
+                  <p className="disease">• &nbsp; {Object.keys(disease)[0]} ({Math.round(Object.values(disease)[0] * 100)}%)</p>
+                  <p className="percentage"></p>
                 </div>
               ))}
             </div>

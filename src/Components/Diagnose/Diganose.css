@@ -27,10 +27,10 @@
 .lside {
   width: 40%;
   padding-left: 5.3rem;
+  padding-top: 8rem;
 }
-.rside{
-    width: 40%;
-    
+.rside {
+  width: 40%;
 }
 
 .heading {
@@ -43,3 +43,10 @@
   font-size: 0.98rem;
   padding-top: 1rem;
 }
+
+.disease {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
