@@ -1,14 +1,45 @@
-.analyse{
-    width: 40%;
-    margin-left: 30%;
-    background-color: #3B3B3B;
-    color: #3dE1EA;
-    border: none;
-    margin-top: 2rem;
-    padding: 0.75rem;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+.analyse {
+  width: 40%;
+  margin-left: 30%;
+  background-color: #3b3b3b;
+  color: #3de1ea;
+  border: none;
+  margin-top: 2rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
 
+.diagnose-display {
+  width: 100%;
+  color: #3b3b3b;
+  margin-top: 7rem;
+  padding-bottom: 10rem;
+  min-height: 50vh;
+  background-color: #3de1ea;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.lside {
+  width: 40%;
+  padding-left: 5.3rem;
+}
+.rside{
+    width: 40%;
+    
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.sub-heading {
+  width: 80%;
+  font-size: 0.98rem;
+  padding-top: 1rem;
 }

@@ -19,8 +19,7 @@ function Diagnose({ sessionId }) {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data.Diseases);
-        // setResult(response.data.Diseases);
+        setResult(response.data.Diseases);
       })
       .catch(function (error) {
         console.error(error);
@@ -33,7 +32,22 @@ function Diagnose({ sessionId }) {
         Analyse
       </button>
 
-      <div className="diagnose-container">{result}</div>
+     <div className="diagnose-display">
+       <div className="lside">
+         <div className="heading">Diagnose Results</div>
+         <div className="sub-heading">
+           These results are <b>based on the data which you have 
+           entered previously</b> and the Diagnose which are displayed 
+           are <b>completely machine generated</b>. If you are having any <b>severe
+           health issuses</b> we recommed you to <b>directly consult a doctor.</b>
+         </div>
+       </div>
+       <div className="rside">
+         <div className="results-container">
+           
+         </div>
+       </div>
+     </div>
     </div>
   );
 }
