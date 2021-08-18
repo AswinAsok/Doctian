@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Hero from "./Components/Hero/Hero Section/Hero";
+import Hero from "./Components/Hero/Hero";
 import Terms from "./Components/Terms/Terms";
 import Symptoms from "./Components/AddSymptoms/Symptoms";
 import SymDisplay from "./Components/SymDisplay/SymDisplay";
