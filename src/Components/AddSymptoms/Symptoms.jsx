@@ -28,7 +28,7 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId }) {
       .catch(function (error) {
         console.error(error);
       });
-  });
+  },[]);
 
   // Udpate Features
 

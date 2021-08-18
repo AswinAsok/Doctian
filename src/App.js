@@ -5,6 +5,7 @@ import Hero from "./Components/Hero/Hero Section/Hero";
 import Terms from "./Components/Terms/Terms";
 import Symptoms from "./Components/AddSymptoms/Symptoms";
 import SymDisplay from "./Components/SymDisplay/SymDisplay";
+import Diagnose from "./Components/Diagnose/Diagnose";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -42,6 +43,8 @@ function App() {
         diagfeatures={diagfeatures}
         setDiagfeatures={setDiagfeatures}
       />
+
+      <Diagnose sessionId={sessionId}/>
     </div>
   );
 }
