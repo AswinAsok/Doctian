@@ -1,5 +1,6 @@
 ## Problem Statement
 Have you ever thought of an interesting convergence of technology and medicine?
+
 Taking into consideration simultaneously acknowledging the fact that virtual visits empower
 people to confer with their caregivers from the comfort of their own homes, indulge
 yourself with ways to establish a system of medical care through online mode. 
