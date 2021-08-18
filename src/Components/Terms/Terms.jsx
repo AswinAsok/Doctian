@@ -1,6 +1,7 @@
 import React from "react";
 import "./Terms.css";
 import axios from "axios";
+import { Fade } from "react-awesome-reveal";
 
 function Terms({ start, setStart, sessionId, setAgree }) {
   const options = {
@@ -22,7 +23,7 @@ function Terms({ start, setStart, sessionId, setAgree }) {
       .request(options)
       .then(function (response) {
         console.log(response.data);
-        setAgree(true)
+        setAgree(true);
       })
       .catch(function (error) {
         console.error(error);
@@ -31,23 +32,25 @@ function Terms({ start, setStart, sessionId, setAgree }) {
 
   if (sessionId && start) {
     return (
-      <div className="terms-container">
-        <hr className="terms-line" />
-        <div className="terms">
-          "I have read, understood and I accept and agree to comply with the
-          Terms of Use of EndlessMedicalAPI and Endless Medical services. The
-          Terms of Use are available on endlessmedical.com"
+      <Fade>
+        <div className="terms-container">
+          <hr className="terms-line" />
+          <div className="terms">
+            "I have read, understood and I accept and agree to comply with the
+            Terms of Use of EndlessMedicalAPI and Endless Medical services. The
+            Terms of Use are available on endlessmedical.com"
+          </div>
+          <button
+            onClick={() => {
+              getTerms();
+              setStart(false);
+            }}
+            className="agree-button"
+          >
+            Agree
+          </button>
         </div>
-        <button
-          onClick={() => {
-            getTerms();
-            setStart(false);
-          }}
-          className="agree-button"
-        >
-          Agree
-        </button>
-      </div>
+      </Fade>
     );
   } else {
     return <div></div>;

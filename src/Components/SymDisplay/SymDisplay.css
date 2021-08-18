@@ -1,6 +1,7 @@
 .symdisplay-container {
   width: 100%;
   margin-top: 3rem;
+  padding-bottom:3rem ;
   min-height: 50vh;
   background-color: #3b3b3b;
   color: #34e1ea;

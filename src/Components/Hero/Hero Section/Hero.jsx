@@ -1,9 +1,11 @@
 import React from "react";
 import "./Hero.css";
+import { Fade } from "react-awesome-reveal";
 
 function Hero({ start, setStart }) {
   return (
     <div>
+      <Fade>
       <div className="hero-container">
         <div className="left-side">
           Doctian
@@ -21,6 +23,7 @@ function Hero({ start, setStart }) {
           will <b>Diganose you in one Scroll.</b>
         </div>
       </div>
+      </Fade>
     </div>
   );
 }

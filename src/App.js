@@ -6,6 +6,7 @@ import Terms from "./Components/Terms/Terms";
 import Symptoms from "./Components/AddSymptoms/Symptoms";
 import SymDisplay from "./Components/SymDisplay/SymDisplay";
 import Diagnose from "./Components/Diagnose/Diagnose";
+import { Fade } from "react-awesome-reveal";
 
 function App() {
   const [start, setStart] = useState(false);
@@ -44,21 +45,25 @@ function App() {
         sessionId={sessionId}
         setAgree={setAgree}
       />
-
-      <Symptoms
-        diagfeatures={diagfeatures}
-        setDiagfeatures={setDiagfeatures}
-        sessionId={sessionId}
-        agree={agree}
-      />
-      <SymDisplay
-        diagfeatures={diagfeatures}
-        setDiagfeatures={setDiagfeatures}
-        sessionId={sessionId}
-        agree={agree}
-      />
-
-      <Diagnose sessionId={sessionId} agree={agree} />
+      <Fade>
+        <Symptoms
+          diagfeatures={diagfeatures}
+          setDiagfeatures={setDiagfeatures}
+          sessionId={sessionId}
+          agree={agree}
+        />
+      </Fade>
+      <Fade>
+        <SymDisplay
+          diagfeatures={diagfeatures}
+          setDiagfeatures={setDiagfeatures}
+          sessionId={sessionId}
+          agree={agree}
+        />
+      </Fade>
+      <Fade>
+        <Diagnose sessionId={sessionId} agree={agree} />
+      </Fade>
     </div>
   );
 }

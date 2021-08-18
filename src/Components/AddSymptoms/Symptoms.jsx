@@ -95,7 +95,7 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
                   required
                   onChange={(event) => setCvalue(event.target.value)}
                   className="standard-basic"
-                  label="Standard"
+                  label="Value"
                 />
               </form>
             </div>
