@@ -45,14 +45,14 @@ function App() {
         sessionId={sessionId}
         setAgree={setAgree}
       />
-      <Fade>
-        <Symptoms
-          diagfeatures={diagfeatures}
-          setDiagfeatures={setDiagfeatures}
-          sessionId={sessionId}
-          agree={agree}
-        />
-      </Fade>
+
+      <Symptoms
+        diagfeatures={diagfeatures}
+        setDiagfeatures={setDiagfeatures}
+        sessionId={sessionId}
+        agree={agree}
+      />
+
       <Fade>
         <SymDisplay
           diagfeatures={diagfeatures}
