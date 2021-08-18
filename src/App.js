@@ -30,18 +30,14 @@ function App() {
       .catch(function (error) {
         console.error(error);
       });
-
-    console.log(sessionId);
-  },[]);
-
-  console.log("Good Morning!!");
+  }, []);
 
   return (
     <div className="App">
       <Hero start={start} setStart={setStart} />
       <Terms start={start} setStart={setStart} sessionId={sessionId} />
 
-      <Symptoms diagfeatures={diagfeatures} setDiagfeatures={setDiagfeatures} />
+      <Symptoms diagfeatures={diagfeatures} setDiagfeatures={setDiagfeatures} sessionId={sessionId}/>
       <SymDisplay
         diagfeatures={diagfeatures}
         setDiagfeatures={setDiagfeatures}

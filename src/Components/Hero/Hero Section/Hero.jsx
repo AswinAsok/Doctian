@@ -1,10 +1,7 @@
 import React from "react";
 import "./Hero.css";
 
-
-function Hero({ start, setStart}) {
-  
-
+function Hero({ start, setStart }) {
   return (
     <div>
       <div className="hero-container">

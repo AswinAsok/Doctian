@@ -3,14 +3,13 @@ import "./Terms.css";
 import axios from "axios";
 
 function Terms({ start, setStart, sessionId }) {
-
   const options = {
     method: "POST",
     url: "https://endlessmedicalapi1.p.rapidapi.com/AcceptTermsOfUse",
     params: {
       passphrase:
         "I have read, understood and I accept and agree to comply with the Terms of Use of EndlessMedicalAPI and Endless Medical services. The Terms of Use are available on endlessmedical.com",
-      SessionID:  sessionId ,
+      SessionID: sessionId,
     },
     headers: {
       "x-rapidapi-key": "79b12daedbmshefa74dba1d17b54p1e2497jsn262f1d43d61b",
@@ -40,7 +39,6 @@ function Terms({ start, setStart, sessionId }) {
         </div>
         <button
           onClick={() => {
-            console.log(sessionId)
             getTerms();
             setStart(false);
           }}
@@ -51,7 +49,7 @@ function Terms({ start, setStart, sessionId }) {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 }
 
