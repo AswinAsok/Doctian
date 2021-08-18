@@ -75,6 +75,9 @@ function Symptoms({ diagfeatures, setDiagfeatures, sessionId, agree }) {
                   According to the symptom you have selected enter either a
                   value or Yes or No.
                 </b>
+                <br></br>
+                <br></br>
+                In case you have <b>entered any wrong values</b> the <b>Analyse button will not function.</b>
               </div>
             </div>
             <div className="symright-side">
